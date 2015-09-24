@@ -1,0 +1,12 @@
+{% extends 'VictoireCoreBundle:Widget:new.html.twig' %}
+{% block form_static %}
+    <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane {% if form.mode.vars.data == widget.mode %}vic-active{% endif %}">
+        {%- include 'VictoireWidgetDateBundle::_form.html.twig' -%}
+    </div>
+{% endblock form_static %}
+
+{% block form_entity %}
+    <div id="picker-{{ entity|lower }}-{{ form.mode.vars.data }}" class="vic-tab-pane vic-mode-{{ widget.mode }} {% if form.mode.vars.data == widget.mode %}vic-active{% endif %}">
+        {%- include 'VictoireWidgetDateBundle::_form.html.twig' -%}
+    </div>
+{% endblock form_entity %}

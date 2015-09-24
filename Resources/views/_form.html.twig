@@ -1,0 +1,59 @@
+<div class="vic-row">
+    <div class="vic-col-sm-6">
+        <div id="picker-{{ form.mode.vars.data }}" class="vic-tab-pane {% if form.mode.vars.data == widget.mode %}vic-active{% endif %}">
+            {{ form_start(form) }}
+            <div class="vic-row">
+                <div class="vic-col-xs-12 vic-col-sm-3">
+                    {{ form_row(form.dateFormat) }}
+                </div>
+                {%- if form.date.date is defined -%}
+                    <div class="vic-col-xs-12 vic-col-sm-3">
+                        {{ form_row(form.date.date.day) }}
+                    </div>
+                    <div class="vic-col-xs-12 vic-col-sm-3">
+                        {{ form_row(form.date.date.month) }}
+                    </div>
+                    <div class="vic-col-xs-12 vic-col-sm-3">
+                        {{ form_row(form.date.date.year) }}
+                    </div>
+                {%- endif -%}
+                {%- if form.fields is defined -%}
+                    <div class="vic-col-xs-12 vic-col-sm-3">
+                        {{ form_widget(form.fields) }}
+                    </div>
+                {%- endif -%}
+            </div>
+            <div class="vic-row">
+                <div class="vic-col-xs-12 vic-col-sm-3">
+                    {{ form_row(form.timeFormat) }}
+                </div>
+                {%- if form.date.time is defined -%}
+                    <div class="vic-col-xs-12 vic-col-sm-3">
+                        {{ form_row(form.date.time.hour) }}
+                    </div>
+                    <div class="vic-col-xs-12 vic-col-sm-3">
+                        {{ form_row(form.date.time.minute) }}
+                    </div>
+                {%- endif -%}
+            </div>
+            <div class="vic-well vic-row">
+                <h5 class="vic-h5">{{ 'widget_date.form.advancedFields'|trans({}, 'victoire') }}</h5>
+                <div class="vic-col-xs-12 vic-col-sm-4">
+                    {{ form_row(form.timezone) }}
+                </div>
+                <div class="vic-col-xs-12 vic-col-sm-4">
+                    {{ form_row(form.locale) }}
+                </div>
+                <div class="vic-col-xs-12 vic-col-sm-4">
+                    {{ form_row(form.format) }}
+                </div>
+            </div>
+            {{form_rest(form)}}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <div class="vic-col-sm-6">
+        {%- include "VictoireWidgetDateBundle::_help.html.twig" -%}
+    </div>
+</div>

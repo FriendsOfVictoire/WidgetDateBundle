@@ -1,0 +1,390 @@
+<h3 class="vic-h3">AIDE</h3>
+<h4 class="vic-h4">Paramètres :</h4>
+<ul>
+    <li><tt class="docutils literal"><code>date_format</code></tt>: The date format. Choose one of these formats:<ul>
+            <li>'none':   <a class="reference external" href="http://php.net/manual/en/class.intldateformatter.php#intldateformatter.constants.none">IntlDateFormatter::NONE</a></li>
+            <li>'short':  <a class="reference external" href="http://php.net/manual/en/class.intldateformatter.php#intldateformatter.constants.short">IntlDateFormatter::SHORT</a></li>
+            <li>'medium': <a class="reference external" href="http://php.net/manual/en/class.intldateformatter.php#intldateformatter.constants.medium">IntlDateFormatter::MEDIUM</a></li>
+            <li>'long':   <a class="reference external" href="http://php.net/manual/en/class.intldateformatter.php#intldateformatter.constants.long">IntlDateFormatter::LONG</a></li>
+            <li>'full':   <a class="reference external" href="http://php.net/manual/en/class.intldateformatter.php#intldateformatter.constants.full">IntlDateFormatter::FULL</a></li>
+        </ul>
+    </li>
+    <li><tt class="docutils literal"><code>time_format</code></tt>: The time format. Same formats possible as above.</li>
+    <li><tt class="docutils literal"><code>locale</code></tt>: The locale used for the format. If <tt class="docutils literal"><code>NULL</code></tt> is given, Twig will
+        use <tt class="docutils literal"><code>Locale::getDefault()</code></tt></li>
+    <li><tt class="docutils literal"><code>timezone</code></tt>: The date timezone</li>
+    <li><tt class="docutils literal"><code>format</code></tt>: Optional pattern to use when formatting or parsing. Possible
+        patterns are documented in the <a class="reference external" href="http://userguide.icu-project.org/formatparse/datetime">ICU user guide</a>.</li>
+</ul>
+<h4 class="vic-h4">Snippets :</h4>
+<p><code>22 Juin 2014</code></p>
+<pre><code class="lang-twig">{{ '{{ entity.createdAt|localizeddate("medium", "none") }}' }}
+    </code></pre>
+<p><code>Dimanche 22 Juin 2014</code></p>
+<pre><code class="lang-twig">{{ '{{ entity.createdAt|localizeddate("medium", "none", null, null, "cccc d LLLL yyyy") }}' }}
+    </code></pre>
+<p><code>Dimanche 22/06/14 à 15h55</code></p>
+<pre><code class="lang-twig">{{ '{{ entity.createdAt|localizeddate("medium", "none", null, null, "cccc d/M/yy à hh’h’mm") }}' }}
+    </code></pre>
+<p>Plus d’infos ici :</p>
+<p><a href="http://twig.sensiolabs.org/doc/extensions/intl.html">http://twig.sensiolabs.org/doc/extensions/intl.html</a></p>
+
+<h4 class="vic-h4">ICU - Guide complet:</h4>
+<table>
+    <tbody>
+        <tr bgcolor="#99ccff">
+            <th bgcolor="#cccccc" colspan="4" style="text-align:center;width:630px;height:49px">
+                <h4><a name="TOC-Date-Field-Symbol-Table"></a>Date Field Symbol Table</h4>
+            </th>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <th bgcolor="#cccccc">Symbol</th>
+            <th bgcolor="#cccccc">Meaning</th>
+            <th bgcolor="#cccccc" colspan="2">Example(s)</th>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">G</td>
+            <td bgcolor="#eeeeee">era designator</td>
+            <td bgcolor="#eeeeee">G, GG, <i>or</i> GGG<br>
+                GGGG<br>
+                GGGGG</td>
+            <td bgcolor="#eeeeee">AD<br>
+                Anno Domini<br>
+                A</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">y</td>
+            <td bgcolor="#eeeeee">year</td>
+            <td bgcolor="#eeeeee">yy<br>
+                y <i>or</i> yyyy</td>
+            <td bgcolor="#eeeeee">96<br>
+                1996</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">Y</td>
+            <td bgcolor="#eeeeee">year of "Week of Year"</td>
+            <td bgcolor="#eeeeee">Y</td>
+            <td bgcolor="#eeeeee">1997</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">u</td>
+            <td bgcolor="#eeeeee">extended year</td>
+            <td bgcolor="#eeeeee">u</td>
+            <td bgcolor="#eeeeee">4601</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">U</td>
+            <td bgcolor="#eeeeee">cyclic year name, as in Chinese lunar calendar</td>
+            <td bgcolor="#eeeeee">U</td>
+            <td bgcolor="#eeeeee">甲子</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">r</td>
+            <td bgcolor="#eeeeee">related Gregorian year</td>
+            <td bgcolor="#eeeeee">r</td>
+            <td bgcolor="#eeeeee">1996</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">Q</td>
+            <td bgcolor="#eeeeee">quarter</td>
+            <td bgcolor="#eeeeee">Q <i>or</i> QQ<br>
+                QQQ<br>
+                QQQQ<br>
+                QQQQQ</td>
+            <td bgcolor="#eeeeee">02<br>
+                Q2<br>
+                2nd quarter<br>
+                2</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">q</td>
+            <td bgcolor="#eeeeee"><b>Stand Alone</b> quarter</td>
+            <td bgcolor="#eeeeee">q<i> or</i> qq<br>
+                qqq<br>
+                qqqq<br>
+                qqqqq</td>
+            <td bgcolor="#eeeeee">02<br>
+                Q2<br>
+                2nd quarter<br>
+                2</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">M</td>
+            <td bgcolor="#eeeeee">month in year</td>
+            <td bgcolor="#eeeeee">M <i>or</i> MM<br>
+                MMM<br>
+                MMMM<br>
+                MMMMM</td>
+            <td bgcolor="#eeeeee">09<br>
+                Sep<br>
+                September<br>
+                S</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">L</td>
+            <td bgcolor="#eeeeee">Stand Alone month in year</td>
+            <td bgcolor="#eeeeee">L <i>or</i> LL<br>
+                LLL<br>
+                LLLL<br>
+                LLLLL</td>
+            <td bgcolor="#eeeeee">09<br>
+                Sep<br>
+                September<br>
+                S</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">w</td>
+            <td bgcolor="#eeeeee">week of year</td>
+            <td bgcolor="#eeeeee">w <i>or</i> ww</td>
+            <td bgcolor="#eeeeee">27</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">W</td>
+            <td bgcolor="#eeeeee">week of month</td>
+            <td bgcolor="#eeeeee">W</td>
+            <td bgcolor="#eeeeee">2</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">d</td>
+            <td bgcolor="#eeeeee">day in month</td>
+            <td bgcolor="#eeeeee">d<br>
+                dd</td>
+            <td bgcolor="#eeeeee">2<br>
+                02</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">D</td>
+            <td bgcolor="#eeeeee">day of year</td>
+            <td bgcolor="#eeeeee">D</td>
+            <td bgcolor="#eeeeee">189</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">F</td>
+            <td bgcolor="#eeeeee">day of week in month</td>
+            <td bgcolor="#eeeeee">F
+            </td>
+            <td bgcolor="#eeeeee">2 (2nd Wed in July)</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">g</td>
+            <td bgcolor="#eeeeee">modified julian day</td>
+            <td bgcolor="#eeeeee">g</td>
+            <td bgcolor="#eeeeee">2451334</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">E</td>
+            <td bgcolor="#eeeeee">day of week</td>
+            <td bgcolor="#eeeeee">E, EE, <i>or</i> EEE<br>
+                EEEE<br>
+                EEEEE<br>
+                EEEEEE</td>
+            <td bgcolor="#eeeeee">Tue<br>
+                Tuesday<br>
+                T<br>
+                Tu</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">e</td>
+            <td bgcolor="#eeeeee">local day of week<br>
+                example: if Monday is 1st day, Tuesday is 2nd ) </td>
+            <td bgcolor="#eeeeee">e <i>or </i>ee<br>
+                eee<br>
+                eeee<br>
+                eeeee<br>
+                eeeeee</td>
+            <td bgcolor="#eeeeee">2<br>
+                Tue<br>
+                Tuesday<br>
+                T<br>
+                Tu</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">c</td>
+            <td bgcolor="#eeeeee">Stand Alone local day of week</td>
+            <td bgcolor="#eeeeee">c <i>or </i>cc<br>
+                ccc<br>
+                cccc<br>
+                ccccc<br>
+                cccccc</td>
+            <td bgcolor="#eeeeee">2<br>
+                Tue<br>
+                Tuesday<br>
+                T<br>
+                Tu</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">a</td>
+            <td bgcolor="#eeeeee">am/pm marker</td>
+            <td bgcolor="#eeeeee">a</td>
+            <td bgcolor="#eeeeee">pm</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">h</td>
+            <td bgcolor="#eeeeee">hour in am/pm (1~12)</td>
+            <td bgcolor="#eeeeee">h<br>
+                hh</td>
+            <td bgcolor="#eeeeee">7<br>
+                07</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">H</td>
+            <td bgcolor="#eeeeee">hour in day (0~23)</td>
+            <td bgcolor="#eeeeee">H<br>
+                HH</td>
+            <td bgcolor="#eeeeee">0<br>
+                00</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">k</td>
+            <td bgcolor="#eeeeee">hour in day (1~24)</td>
+            <td bgcolor="#eeeeee">k<br>
+                kk</td>
+            <td bgcolor="#eeeeee">24<br>
+                24</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">K</td>
+            <td bgcolor="#eeeeee">hour in am/pm (0~11)</td>
+            <td bgcolor="#eeeeee">K<br>
+                KK</td>
+            <td bgcolor="#eeeeee">0<br>
+                00</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">m</td>
+            <td bgcolor="#eeeeee">minute in hour</td>
+            <td bgcolor="#eeeeee">m<br>
+                mm</td>
+            <td bgcolor="#eeeeee">4<br>
+                04</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">s</td>
+            <td bgcolor="#eeeeee">second in minute</td>
+            <td bgcolor="#eeeeee">s<br>
+                ss</td>
+            <td bgcolor="#eeeeee">5<br>
+                05</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">S</td>
+            <td bgcolor="#eeeeee">fractional second - truncates (like other time fields) <br>to the count of letters when formatting. Appends <br>zeros if more than 3 letters specified. Truncates at <br>three significant digits when parsing.&nbsp;</td>
+            <td bgcolor="#eeeeee">S<br>
+                SS<br>
+                SSS<br>
+                SSSS</td>
+            <td bgcolor="#eeeeee">2<br>
+                23<br>
+                235<br>
+                2350</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">A</td>
+            <td bgcolor="#eeeeee">milliseconds in day</td>
+            <td bgcolor="#eeeeee">A</td>
+            <td bgcolor="#eeeeee">61201235</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">z</td>
+            <td bgcolor="#eeeeee">Time Zone: specific non-location</td>
+            <td bgcolor="#eeeeee">z, zz, <i>or</i> zzz<br>
+                zzzz</td>
+            <td bgcolor="#eeeeee">PDT<br>
+                Pacific Daylight Time</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">Z</td>
+            <td bgcolor="#eeeeee">Time Zone: ISO8601 basic hms? / RFC 822<br>
+                Time Zone: long localized GMT (=OOOO)<br>
+                TIme Zone: ISO8601 extended hms? (=XXXXX)</td>
+            <td bgcolor="#eeeeee">Z, ZZ, <i>or</i> ZZZ<br>
+                ZZZZ<br>
+                ZZZZZ</td>
+            <td bgcolor="#eeeeee">-0800<br>
+                GMT-08:00<br>
+                -08:00, -07:52:58, Z</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">O</td>
+            <td bgcolor="#eeeeee">Time Zone: short localized GMT<br>
+                Time Zone: long localized GMT (=ZZZZ)</td>
+            <td bgcolor="#eeeeee">O<br>
+                OOOO</td>
+            <td bgcolor="#eeeeee">GMT-8<br>
+                GMT-08:00</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">v</td>
+            <td bgcolor="#eeeeee">Time Zone: generic non-location<br>
+                (falls back first to VVVV)</td>
+            <td bgcolor="#eeeeee">v<br>
+                vvvv</td>
+            <td bgcolor="#eeeeee">PT<br>
+                Pacific Time <i>or</i> Los Angeles Time</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">V</td>
+            <td bgcolor="#eeeeee">Time Zone: short time zone ID<br>
+                Time Zone: long time zone ID<br>
+                Time Zone: time zone exemplar city<br>
+                Time Zone: generic location (falls back to OOOO)</td>
+            <td bgcolor="#eeeeee">V<br>
+                VV<br>
+                VVV<br>
+                VVVV</td>
+            <td bgcolor="#eeeeee">uslax<br>
+                America/Los_Angeles<br>
+                Los Angeles<br>
+                Los Angeles Time</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">X</td>
+            <td bgcolor="#eeeeee">Time Zone: ISO8601 basic hm?, with Z for 0<br>
+                Time Zone: ISO8601 basic hm, with Z<br>
+                Time Zone: ISO8601 extended hm, with Z<br>
+                Time Zone: ISO8601 basic hms?, with Z<br>
+                Time Zone: ISO8601 extended hms?, with Z</td>
+            <td bgcolor="#eeeeee">X<br>
+                XX<br>
+                XXX<br>
+                XXXX<br>
+                XXXXX</td>
+            <td bgcolor="#eeeeee">-08, +0530, Z<br>
+                -0800, Z<br>
+                -08:00, Z<br>
+                -0800, -075258, Z<br>
+                -08:00, -07:52:58, Z
+            </td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">x</td>
+            <td bgcolor="#eeeeee">Time Zone: ISO8601 basic hm?, without Z for 0<br>
+                Time Zone: ISO8601 basic hm, without Z<br>
+                Time Zone: ISO8601 extended hm, without Z<br>
+                Time Zone: ISO8601 basic hms?, without Z<br>
+                Time Zone: ISO8601 extended hms?, without Z</td>
+            <td bgcolor="#eeeeee">x<br>
+                xx<br>
+                xxx<br>
+                xxxx<br>
+                xxxxx</td>
+            <td bgcolor="#eeeeee">-08, +0530<br>
+                -0800<br>
+                -08:00<br>
+                -0800, -075258<br>
+                -08:00, -07:52:58</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">'</td>
+            <td bgcolor="#eeeeee">escape for text</td>
+            <td bgcolor="#eeeeee">'</td>
+            <td bgcolor="#eeeeee">(nothing)</td>
+        </tr>
+        <tr bgcolor="#99ccff">
+            <td bgcolor="#eeeeee">' '</td>
+            <td bgcolor="#eeeeee">two single quotes produce one</td>
+            <td bgcolor="#eeeeee">' '</td>
+            <td bgcolor="#eeeeee">'</td>
+        </tr>
+    </tbody>
+</table>

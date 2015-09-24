@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2013-11-27T18:15:06Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="1" resname="widget.date.new.action.label">
+        <source>widget.date.new.action.label</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="2" resname="modal.form.widget.type.date.label">
+        <source>modal.form.widget.type.date.label</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="3" resname="widget_date.form.format.label">
+        <source>widget_date.form.format.label</source>
+        <target>Advanced format</target>
+      </trans-unit>
+      <trans-unit id="5" resname="Day">
+        <source>Day</source>
+        <target>Day</target>
+      </trans-unit>
+      <trans-unit id="6" resname="Month">
+        <source>Month</source>
+        <target>Month</target>
+      </trans-unit>
+      <trans-unit id="7" resname="Year">
+        <source>Year</source>
+        <target>Year</target>
+      </trans-unit>
+      <trans-unit id="8" resname="Hour">
+        <source>Hour</source>
+        <target>Hour</target>
+      </trans-unit>
+      <trans-unit id="9" resname="Minute">
+        <source>Minute</source>
+        <target>Minute</target>
+      </trans-unit>
+      <trans-unit id="10" resname="widget_date.form.dateFormat.label">
+        <source>widget_date.form.dateFormat.label</source>
+        <target>Date format</target>
+      </trans-unit>
+      <trans-unit id="11" resname="widget_date.form.timeFormat.label">
+        <source>widget_date.form.timeFormat.label</source>
+        <target>Hours format</target>
+      </trans-unit>
+      <trans-unit id="12" resname="widget_date.form.locale.label">
+        <source>widget_date.form.locale.label</source>
+        <target>Locale</target>
+      </trans-unit>
+      <trans-unit id="13" resname="widget_date.form.timezone.label">
+        <source>widget_date.form.timezone.label</source>
+        <target>Timezone</target>
+      </trans-unit>
+      <trans-unit id="14" resname="widget_date.form.advancedFields">
+        <source>widget_date.form.advancedFields</source>
+        <target>Advanced fields</target>
+      </trans-unit>
+      <trans-unit id="15" resname="widget_date.form.dateFormat.choices.none">
+        <source>widget_date.form.dateFormat.choices.none</source>
+        <target>None</target>
+      </trans-unit>
+      <trans-unit id="16" resname="widget_date.form.dateFormat.choices.short">
+        <source>widget_date.form.dateFormat.choices.short</source>
+        <target>Short</target>
+      </trans-unit>
+      <trans-unit id="17" resname="widget_date.form.dateFormat.choices.medium">
+        <source>widget_date.form.dateFormat.choices.medium</source>
+        <target>Medium</target>
+      </trans-unit>
+      <trans-unit id="18" resname="widget_date.form.dateFormat.choices.long">
+        <source>widget_date.form.dateFormat.choices.long</source>
+        <target>Long</target>
+      </trans-unit>
+      <trans-unit id="19" resname="widget_date.form.dateFormat.choices.full">
+        <source>widget_date.form.dateFormat.choices.full</source>
+        <target>Full</target>
+      </trans-unit>
+      <trans-unit id="20" resname="widget_date.form.dateFormat.empty_value">
+        <source>widget_date.form.dateFormat.empty_value</source>
+        <target>---</target>
+      </trans-unit>
+      <trans-unit id="21" resname="widget_date.form.timeFormat.empty_value">
+        <source>widget_date.form.timeFormat.empty_value</source>
+        <target>---</target>
+      </trans-unit>
+      <trans-unit id="22" resname="widget_date.form.locale.empty_value">
+        <source>widget_date.form.locale.empty_value</source>
+        <target>---</target>
+      </trans-unit>
+      <trans-unit id="23" resname="widget_date.form.timezone.empty_value">
+        <source>widget_date.form.timezone.empty_value</source>
+        <target>---</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
