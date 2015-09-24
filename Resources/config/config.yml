@@ -3,9 +3,3 @@ victoire_core:
         Date:
             class: "Victoire\\Widget\\DateBundle\\Entity\\WidgetDate"
             name: Date
-            
-jms_translation:
-    configs:
-        victoire_date_bundle:
-            dirs: ["@VictoireDateBundle"]
-            output_dir: "@VictoireDateBundle/Resources/translations"
