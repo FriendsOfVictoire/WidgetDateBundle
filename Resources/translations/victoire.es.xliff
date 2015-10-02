@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-11-27T18:15:06Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2013-11-27T18:15:06Z" source-language="en" target-language="es" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -8,43 +8,43 @@
     <body>
       <trans-unit id="1" resname="widget.date.new.action.label">
         <source>widget.date.new.action.label</source>
-        <target>Date</target>
+        <target>Fecha</target>
       </trans-unit>
       <trans-unit id="2" resname="modal.form.widget.type.date.label">
         <source>modal.form.widget.type.date.label</source>
-        <target>Date</target>
+        <target>Fecha</target>
       </trans-unit>
       <trans-unit id="3" resname="widget_date.form.format.label">
         <source>widget_date.form.format.label</source>
-        <target>Advanced format</target>
+        <target>Formato avanzado</target>
       </trans-unit>
       <trans-unit id="5" resname="Day">
         <source>Day</source>
-        <target>Day</target>
+        <target>Día</target>
       </trans-unit>
       <trans-unit id="6" resname="Month">
         <source>Month</source>
-        <target>Month</target>
+        <target>Mes</target>
       </trans-unit>
       <trans-unit id="7" resname="Year">
         <source>Year</source>
-        <target>Year</target>
+        <target>Año</target>
       </trans-unit>
       <trans-unit id="8" resname="Hour">
         <source>Hour</source>
-        <target>Hour</target>
+        <target>Hora</target>
       </trans-unit>
       <trans-unit id="9" resname="Minute">
         <source>Minute</source>
-        <target>Minute</target>
+        <target>Minuto</target>
       </trans-unit>
       <trans-unit id="10" resname="widget_date.form.dateFormat.label">
         <source>widget_date.form.dateFormat.label</source>
-        <target>Date format</target>
+        <target>Formato de fecha</target>
       </trans-unit>
       <trans-unit id="11" resname="widget_date.form.timeFormat.label">
         <source>widget_date.form.timeFormat.label</source>
-        <target>Hours format</target>
+        <target>Formato de horas</target>
       </trans-unit>
       <trans-unit id="12" resname="widget_date.form.locale.label">
         <source>widget_date.form.locale.label</source>
@@ -52,31 +52,31 @@
       </trans-unit>
       <trans-unit id="13" resname="widget_date.form.timezone.label">
         <source>widget_date.form.timezone.label</source>
-        <target>Timezone</target>
+        <target>Zona horaria</target>
       </trans-unit>
       <trans-unit id="14" resname="widget_date.form.advancedFields">
         <source>widget_date.form.advancedFields</source>
-        <target>Advanced fields</target>
+        <target>Campos avanzados</target>
       </trans-unit>
       <trans-unit id="15" resname="widget_date.form.dateFormat.choices.none">
         <source>widget_date.form.dateFormat.choices.none</source>
-        <target>None</target>
+        <target>Ninguno</target>
       </trans-unit>
       <trans-unit id="16" resname="widget_date.form.dateFormat.choices.short">
         <source>widget_date.form.dateFormat.choices.short</source>
-        <target>Short</target>
+        <target>Corto</target>
       </trans-unit>
       <trans-unit id="17" resname="widget_date.form.dateFormat.choices.medium">
         <source>widget_date.form.dateFormat.choices.medium</source>
-        <target>Medium</target>
+        <target>Medio</target>
       </trans-unit>
       <trans-unit id="18" resname="widget_date.form.dateFormat.choices.long">
         <source>widget_date.form.dateFormat.choices.long</source>
-        <target>Long</target>
+        <target>Largo</target>
       </trans-unit>
       <trans-unit id="19" resname="widget_date.form.dateFormat.choices.full">
         <source>widget_date.form.dateFormat.choices.full</source>
-        <target>Full</target>
+        <target>Completo</target>
       </trans-unit>
       <trans-unit id="20" resname="widget_date.form.dateFormat.empty_value">
         <source>widget_date.form.dateFormat.empty_value</source>

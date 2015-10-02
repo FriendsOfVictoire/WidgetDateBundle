@@ -1,4 +1,4 @@
-Victoire CMS Date Bundle
+Victoire DCMS Date Bundle
 ============
 
 Need to render a date properly in a victoire website ?
