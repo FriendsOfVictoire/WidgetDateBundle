@@ -8,7 +8,7 @@ use Victoire\Bundle\WidgetBundle\Resolver\BaseWidgetContentResolver;
 class WidgetDateContentResolver extends BaseWidgetContentResolver
 {
     /**
-     * Override the populateParametersWithWidgetFields
+     * Override the populateParametersWithWidgetFields.
      *
      * @param Widget $widget
      * @param $entity
