@@ -1,19 +1,19 @@
 <?php
+
 namespace Victoire\Widget\DateBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Annotations as VIC;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
- * WidgetDate
+ * WidgetDate.
  *
  * @ORM\Table("vic_widget_date")
  * @ORM\Entity
  */
 class WidgetDate extends Widget
 {
-
     /**
      * @var string
      *
@@ -59,9 +59,9 @@ class WidgetDate extends Widget
 
     /**
      * To String function
-     * Used in render choices type (Especially in VictoireWidgetRenderBundle)
+     * Used in render choices type (Especially in VictoireWidgetRenderBundle).
      *
-     * @return String
+     * @return string
      */
     public function __toString()
     {
