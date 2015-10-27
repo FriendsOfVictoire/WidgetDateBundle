@@ -1,12 +1,22 @@
 Victoire DCMS Date Bundle
 ============
 
-Need to render a date properly in a victoire website ?
+##What is the purpose of this bundle
 
-First you need to have a valid Symfony2 Victoire edition.
-Then you just have to run the following composer command :
+This bundle installs the *Date Widget* on your Victoire project.
+It renders the date in any format you want.
+
+##Set Up Victoire
+
+If you haven't already, you can follow the steps to set up Victoire *[here](https://github.com/Victoire/victoire/blob/master/setup.md)*
+
+##Install the bundle :
+
+Run the following composer command :
 
     php composer.phar require friendsofvictoire/date-widget
+
+###Reminder
 
 Do not forget to add the bundle in your AppKernel !
 
