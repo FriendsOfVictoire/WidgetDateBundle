@@ -2,7 +2,7 @@
     "name": "friendsofvictoire/date-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS Date widget",
-    "keywords": ["DCMS", "Victoire", "widget", "FriendsofVictoire", "FoV", "Dynamic", "CMS",],
+    "keywords": ["DCMS", "Victoire", "widget", "FriendsofVictoire", "FoV", "Dynamic", "CMS", "Date"],
     "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
