@@ -2,22 +2,19 @@
 
 namespace Victoire\Widget\DateBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Choice;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 
-/**
- * WidgetDate form type.
- */
 class WidgetDateType extends WidgetType
 {
     protected $availableLocales;
     protected $currentLocale;
 
-    /**
-     * Constructor.
-     */
     public function __construct($availableLocales)
     {
         $this->availableLocales = $availableLocales;
@@ -32,37 +29,29 @@ class WidgetDateType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $localesChoices = [];
-        foreach ($this->availableLocales as $localeVal) {
-            $localesChoices[$localeVal] = 'victoire.i18n.viewType.locale.'.$localeVal;
-        }
         if ($options['mode'] === Widget::MODE_STATIC) {
-            $builder->add('date', 'datetime', [
+            $builder->add('date', DateTimeType::class, [
                 'label' => 'widget_date.form.date.label',
             ]);
         }
+        $datetimeFormatChoices = [
+            'widget_date.form.dateFormat.choices.none'   => 'none',
+            'widget_date.form.dateFormat.choices.short'  => 'short',
+            'widget_date.form.dateFormat.choices.medium' => 'medium',
+            'widget_date.form.dateFormat.choices.long'   => 'long',
+            'widget_date.form.dateFormat.choices.full'   => 'full',
+        ];
+
         $builder
-            ->add('dateFormat', 'choice', [
+            ->add('dateFormat', Choice::class, [
                     'label'       => 'widget_date.form.dateFormat.label',
                     'empty_value' => 'widget_date.form.dateFormat.empty_value',
-                    'choices'     => [
-                        'none'   => 'widget_date.form.dateFormat.choices.none',
-                        'short'  => 'widget_date.form.dateFormat.choices.short',
-                        'medium' => 'widget_date.form.dateFormat.choices.medium',
-                        'long'   => 'widget_date.form.dateFormat.choices.long',
-                        'full'   => 'widget_date.form.dateFormat.choices.full',
-                    ],
+                    'choices'     => $datetimeFormatChoices,
             ])
-            ->add('timeFormat', 'choice', [
+            ->add('timeFormat', Choice::class, [
                     'label'       => 'widget_date.form.timeFormat.label',
                     'empty_value' => 'widget_date.form.timeFormat.empty_value',
-                    'choices'     => [
-                        'none'   => 'widget_date.form.dateFormat.choices.none',
-                        'short'  => 'widget_date.form.dateFormat.choices.short',
-                        'medium' => 'widget_date.form.dateFormat.choices.medium',
-                        'long'   => 'widget_date.form.dateFormat.choices.long',
-                        'full'   => 'widget_date.form.dateFormat.choices.full',
-                    ],
+                    'choices'     => $datetimeFormatChoices,
             ])
             ->add('locale', null, [
                     'label'       => 'widget_date.form.locale.label',
@@ -76,8 +65,12 @@ class WidgetDateType extends WidgetType
                     'label' => 'widget_date.form.format.label',
             ]);
 
+        $localesChoices = [];
+        foreach ($this->availableLocales as $localeVal) {
+            $localesChoices['victoire.i18n.viewType.locale.'.$localeVal] = $localeVal;
+        }
         if (!empty($localesChoices)) {
-            $builder->add('locale', 'choice', [
+            $builder->add('locale', ChoiceType::class, [
                         'label'   => 'widget_date.form.locale.label',
                         'choices' => $localesChoices,
                     ]);
@@ -86,28 +79,16 @@ class WidgetDateType extends WidgetType
     }
 
     /**
-     * bind form to WidgetDate entity.
-     *
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\DateBundle\Entity\WidgetDate',
             'widget'             => 'Date',
             'translation_domain' => 'victoire',
         ]);
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string The form name
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_date';
     }
 }

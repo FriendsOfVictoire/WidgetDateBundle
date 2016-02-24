@@ -1,40 +1,34 @@
 {
-    "name"             : "friendsofvictoire/date-widget",
-    "type"             : "symfony-bundle",
-    "description"      : "Victoire DCMS Date widget",
-    "keywords"         : [
+    "name": "friendsofvictoire/date-widget",
+    "type": "symfony-bundle",
+    "description": "Victoire DCMS Date widget",
+    "keywords": [
         "DCMS",
         "Victoire",
         "widget",
         "FriendsofVictoire",
-        "FoV",
-        "Dynamic",
-        "CMS",
         "Date"
     ],
-    "homepage"         : "http://victoire.io",
-    "license"          : "MIT",
-    "authors"          : [
+    "license": "MIT",
+    "authors": [
         {
-            "name" : "Leny Bernard",
+            "name": "Leny Bernard",
             "email": "leny@victoire.io"
         }
     ],
-    "require"          : {
-        "php"                     : ">=5.3.3",
-        "symfony/framework-bundle": "~2.3",
-        "victoire/victoire"       : "~1.3.0"
+    "require": {
+        "victoire/victoire": "~1.5"
     },
-    "autoload"         : {
+    "autoload": {
         "psr-0": {
             "Victoire\\Widget\\DateBundle": ""
         }
     },
     "minimum-stability": "dev",
-    "target-dir"       : "Victoire/Widget/DateBundle",
-    "extra"            : {
+    "target-dir": "Victoire/Widget/DateBundle",
+    "extra": {
         "branch-alias": {
-            "dev-master": "1.3.x-dev"
+            "dev-master": "1.5.x-dev"
         }
     }
 }

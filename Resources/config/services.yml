@@ -4,14 +4,12 @@ services:
         tags:
             - { name: victoire_widget.widget_content_resolver, alias: Date }
 
-    #alias to the entity
     victoire.widget.date:
         class: Victoire\Widget\DateBundle\Entity\WidgetDate
 
-    #alias to the form
     victoire.widget.form.date:
         class: Victoire\Widget\DateBundle\Form\WidgetDateType
         arguments:
             - "%victoire_i18n.available_locales%"
         tags:
-            - { name: form.type , alias: victoire_widget_form_date }
+            - { name: form.type }
