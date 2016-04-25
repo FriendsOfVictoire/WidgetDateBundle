@@ -6,7 +6,6 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Choice;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 use Victoire\Bundle\WidgetBundle\Model\Widget;
 
@@ -43,12 +42,12 @@ class WidgetDateType extends WidgetType
         ];
 
         $builder
-            ->add('dateFormat', Choice::class, [
+            ->add('dateFormat', ChoiceType::class, [
                     'label'       => 'widget_date.form.dateFormat.label',
                     'empty_value' => 'widget_date.form.dateFormat.empty_value',
                     'choices'     => $datetimeFormatChoices,
             ])
-            ->add('timeFormat', Choice::class, [
+            ->add('timeFormat', ChoiceType::class, [
                     'label'       => 'widget_date.form.timeFormat.label',
                     'empty_value' => 'widget_date.form.timeFormat.empty_value',
                     'choices'     => $datetimeFormatChoices,
