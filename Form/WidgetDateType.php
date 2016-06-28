@@ -4,6 +4,7 @@ namespace Victoire\Widget\DateBundle\Form;
 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TimezoneType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
@@ -43,20 +44,22 @@ class WidgetDateType extends WidgetType
 
         $builder
             ->add('dateFormat', ChoiceType::class, [
-                    'label'       => 'widget_date.form.dateFormat.label',
-                    'empty_value' => 'widget_date.form.dateFormat.empty_value',
-                    'choices'     => $datetimeFormatChoices,
+                'label'       => 'widget_date.form.dateFormat.label',
+                'empty_value' => 'widget_date.form.dateFormat.empty_value',
+                'choices'     => $datetimeFormatChoices,
+                'choices_as_values' => true,
             ])
             ->add('timeFormat', ChoiceType::class, [
-                    'label'       => 'widget_date.form.timeFormat.label',
-                    'empty_value' => 'widget_date.form.timeFormat.empty_value',
-                    'choices'     => $datetimeFormatChoices,
+                'label'       => 'widget_date.form.timeFormat.label',
+                'empty_value' => 'widget_date.form.timeFormat.empty_value',
+                'choices'     => $datetimeFormatChoices,
+                'choices_as_values' => true,
             ])
             ->add('locale', null, [
                     'label'       => 'widget_date.form.locale.label',
                     'empty_value' => 'widget_date.form.locale.empty_value',
             ])
-            ->add('timezone', 'timezone', [
+            ->add('timezone', TimezoneType::class, [
                     'label'       => 'widget_date.form.timezone.label',
                     'empty_value' => 'widget_date.form.timezone.empty_value',
             ])
@@ -70,9 +73,10 @@ class WidgetDateType extends WidgetType
         }
         if (!empty($localesChoices)) {
             $builder->add('locale', ChoiceType::class, [
-                        'label'   => 'widget_date.form.locale.label',
-                        'choices' => $localesChoices,
-                    ]);
+                'label'   => 'widget_date.form.locale.label',
+                'choices' => $localesChoices,
+                'choices_as_values' => true,
+            ]);
         }
         parent::buildForm($builder, $options);
     }
