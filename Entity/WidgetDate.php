@@ -39,9 +39,9 @@ class WidgetDate extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="locale", type="string", length=70, nullable=true)
+     * @ORM\Column(name="dateLocale", type="string", length=70, nullable=true)
      */
-    protected $locale;
+    protected $dateLocale;
 
     /**
      * @var string
@@ -119,17 +119,17 @@ class WidgetDate extends Widget
     /**
      * @return string
      */
-    public function getLocale()
+    public function getDateLocale()
     {
-        return $this->locale;
+        return $this->dateLocale;
     }
 
     /**
-     * @param string $locale
+     * @param string $dateLocale
      */
-    public function setLocale($locale)
+    public function setDateLocale($dateLocale)
     {
-        $this->locale = $locale;
+        $this->dateLocale = $dateLocale;
     }
 
     /**
