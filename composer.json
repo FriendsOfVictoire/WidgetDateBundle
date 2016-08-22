@@ -17,18 +17,12 @@
         }
     ],
     "require": {
-        "victoire/victoire": "~1.5"
+        "victoire/victoire": ">=2.0.0"
     },
     "autoload": {
         "psr-0": {
             "Victoire\\Widget\\DateBundle": ""
         }
     },
-    "minimum-stability": "dev",
-    "target-dir": "Victoire/Widget/DateBundle",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.5.x-dev"
-        }
-    }
+    "target-dir": "Victoire/Widget/DateBundle"
 }
