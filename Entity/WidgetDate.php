@@ -58,6 +58,13 @@ class WidgetDate extends Widget
     protected $format;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="locale", type="string", length=10, nullable=true)
+     */
+    protected $locale;
+
+    /**
      * To String function
      * Used in render choices type (Especially in VictoireWidgetRenderBundle).
      *
@@ -162,5 +169,21 @@ class WidgetDate extends Widget
     public function setFormat($format)
     {
         $this->format = $format;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * @param string $locale
+     */
+    public function setLocale(string $locale)
+    {
+        $this->locale = $locale;
     }
 }
