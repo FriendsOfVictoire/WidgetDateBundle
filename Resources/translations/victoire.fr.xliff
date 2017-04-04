@@ -50,10 +50,6 @@
         <source>widget_date.form.timeFormat.label</source>
         <target>Format heures</target>
       </trans-unit>
-      <trans-unit id="12" resname="widget_date.form.locale.label">
-        <source>widget_date.form.locale.label</source>
-        <target>Langue</target>
-      </trans-unit>
       <trans-unit id="13" resname="widget_date.form.timezone.label">
         <source>widget_date.form.timezone.label</source>
         <target>Fuseau horaire</target>

@@ -39,13 +39,6 @@ class WidgetDate extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="dateLocale", type="string", length=70, nullable=true)
-     */
-    protected $dateLocale;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="timezone", type="string", length=70, nullable=true)
      */
     protected $timezone;
@@ -57,12 +50,6 @@ class WidgetDate extends Widget
      */
     protected $format;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="locale", type="string", length=10, nullable=true)
-     */
-    protected $locale;
 
     /**
      * To String function
@@ -116,35 +103,19 @@ class WidgetDate extends Widget
     }
 
     /**
-     * @param string $timeFormat
-     */
-    public function setTimeFormat($timeFormat)
-    {
-        $this->timeFormat = $timeFormat;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDateLocale()
-    {
-        return $this->dateLocale;
-    }
-
-    /**
-     * @param string $dateLocale
-     */
-    public function setDateLocale($dateLocale)
-    {
-        $this->dateLocale = $dateLocale;
-    }
-
-    /**
      * @return string
      */
     public function getTimezone()
     {
         return $this->timezone;
+    }
+
+    /**
+     * @param string $timeFormat
+     */
+    public function setTimeFormat($timeFormat)
+    {
+        $this->timeFormat = $timeFormat;
     }
 
     /**
@@ -171,19 +142,4 @@ class WidgetDate extends Widget
         $this->format = $format;
     }
 
-    /**
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
-
-    /**
-     * @param string $locale
-     */
-    public function setLocale(string $locale)
-    {
-        $this->locale = $locale;
-    }
 }
