@@ -12,13 +12,6 @@ use Victoire\Bundle\WidgetBundle\Model\Widget;
 
 class WidgetDateType extends WidgetType
 {
-    protected $availableLocales;
-    protected $currentLocale;
-
-    public function __construct($availableLocales)
-    {
-        $this->availableLocales = $availableLocales;
-    }
 
     /**
      * define form fields.
@@ -55,10 +48,6 @@ class WidgetDateType extends WidgetType
                 'choices'     => $datetimeFormatChoices,
                 'choices_as_values' => true,
             ])
-            ->add('locale', null, [
-                    'label'       => 'widget_date.form.locale.label',
-                    'empty_value' => 'widget_date.form.locale.empty_value',
-            ])
             ->add('timezone', TimezoneType::class, [
                     'label'       => 'widget_date.form.timezone.label',
                     'empty_value' => 'widget_date.form.timezone.empty_value',
@@ -67,17 +56,6 @@ class WidgetDateType extends WidgetType
                     'label' => 'widget_date.form.format.label',
             ]);
 
-        $localesChoices = [];
-        foreach ($this->availableLocales as $localeVal) {
-            $localesChoices['victoire.i18n.viewType.locale.'.$localeVal] = $localeVal;
-        }
-        if (!empty($localesChoices)) {
-            $builder->add('locale', ChoiceType::class, [
-                'label'   => 'widget_date.form.locale.label',
-                'choices' => $localesChoices,
-                'choices_as_values' => true,
-            ]);
-        }
         parent::buildForm($builder, $options);
     }
 
