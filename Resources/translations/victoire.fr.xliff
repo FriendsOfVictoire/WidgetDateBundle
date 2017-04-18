@@ -68,7 +68,7 @@
       </trans-unit>
       <trans-unit id="17" resname="widget_date.form.dateFormat.choices.medium">
         <source>widget_date.form.dateFormat.choices.medium</source>
-        <target>Intermédiare</target>
+        <target>Intermédiaire</target>
       </trans-unit>
       <trans-unit id="18" resname="widget_date.form.dateFormat.choices.long">
         <source>widget_date.form.dateFormat.choices.long</source>
